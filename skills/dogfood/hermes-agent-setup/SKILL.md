@@ -261,7 +261,7 @@ Edit with `hermes config edit` or `hermes config set KEY VALUE`.
 |---------|-------------|
 | /reset or /new | Fresh session (picks up new tool config) |
 | /help | Show all commands |
-| /model [name] | Show or change model |
+| /provider | Show current provider and available providers |
 | /compact | Compress conversation to save context |
 | /voice [mode] | Configure voice replies |
 | /reasoning [effort] | Set reasoning level |
