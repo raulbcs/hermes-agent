@@ -1,7 +1,7 @@
-"""Shared model-switching logic for CLI and gateway /model commands.
+"""Shared model-switching logic for `hermes model` and ACP adapter.
 
-Both the CLI (cli.py) and gateway (gateway/run.py) /model handlers
-share the same core pipeline:
+Both the `hermes model` CLI subcommand and the ACP adapter's /model
+handler share the same core pipeline:
 
   parse_model_input → is_custom detection → auto-detect provider
   → credential resolution → validate model → return result
@@ -181,7 +181,7 @@ def switch_model(
 
 
 def switch_to_custom_provider() -> CustomAutoResult:
-    """Handle bare '/model custom' — resolve endpoint and auto-detect model.
+    """Handle bare 'custom' model input — resolve endpoint and auto-detect model.
 
     Returns a result object; the caller handles persistence and output.
     """
@@ -220,7 +220,7 @@ def switch_to_custom_provider() -> CustomAutoResult:
             error_message=(
                 f"Custom endpoint at {cust_base} is reachable but no single "
                 f"model was auto-detected. Specify the model explicitly: "
-                f"/model custom:<model-name>"
+                f"hermes model (then pick a custom provider)"
             ),
         )
 
